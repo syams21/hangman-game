@@ -65,8 +65,9 @@ public class HangmanGame {
             printHangedMan(wrongCount);
 
             if (wrongCount >= 6) {
-                System.out.println("You Lose!");
-                System.out.println("The word was: " + word);
+                System.out.println("\nYou Lose!");
+                System.out.println("\nThe word was: " + word);
+                System.out.println();
                 break;
             }
 
@@ -77,7 +78,7 @@ public class HangmanGame {
             }
         
             if (printWordState(word, playerGuesses)) {
-                System.out.println("You win!");
+                System.out.println("\nYou win!\n");
                 break;
             }
 
