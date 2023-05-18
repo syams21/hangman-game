@@ -4,27 +4,36 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.CountDownLatch;
-
-import javax.swing.text.html.parser.Element;
-import javax.swing.undo.StateEdit;
 
 public class HangmanGame {
     public static void main(String[] args) throws FileNotFoundException{
-        Scanner scanner = new Scanner(new File("words.txt"));
         Scanner keyboard = new Scanner(System.in);
 
-        List<String> words = new ArrayList<>();
+        System.out.println("1 or 2 Players?");
+        String player = keyboard.nextLine();
+        String word;
 
-        while (scanner.hasNext()) {
-            words.add(scanner.nextLine());
+        if (player.equals("1")) {
+            Scanner scanner = new Scanner(new File("words.txt"));
+    
+            List<String> words = new ArrayList<>();
+    
+            while (scanner.hasNext()) {
+                words.add(scanner.nextLine());
+            }
+    
+            Random rand = new Random();
+    
+            word = words.get(rand.nextInt(words.size()));
         }
+        else {
+            System.out.println("Player 1, please enter your word: ");
+            word = keyboard.nextLine();
 
-        Random rand = new Random();
-
-        String word = words.get(rand.nextInt(words.size()));
-
-        System.out.println(word);
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("Ready for player 2! Good Luck!");
+        }
+        //System.out.println(word);
 
         List<Character> playerGuesses = new ArrayList<>();
         
@@ -35,6 +44,7 @@ public class HangmanGame {
 
             if (wrongCount >= 6) {
                 System.out.println("You Lose!");
+                System.out.println("The word was: " + word);
                 break;
             }
 
