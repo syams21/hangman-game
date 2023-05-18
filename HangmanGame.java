@@ -49,7 +49,7 @@ public class HangmanGame {
             word = words.get(rand.nextInt(words.size()));
         }
         else {
-            System.out.println("Player 1, please enter your word: ");
+            System.out.println("\nPlayer 1, please enter your word: ");
             word = keyboard.nextLine();
 
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -84,7 +84,7 @@ public class HangmanGame {
 
             System.out.println("\nPlease enter your guess for the word: ");
             if (keyboard.nextLine().equals(word)) {
-                System.out.println("You win!");
+                System.out.println("\nYou win!\n");
                 break;
             }
             else {
