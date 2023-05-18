@@ -9,17 +9,39 @@ public class HangmanGame {
     public static void main(String[] args) throws FileNotFoundException{
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("1 or 2 Players?");
+        System.out.print("1 or 2 Players? ");
         String player = keyboard.nextLine();
         String word;
 
         if (player.equals("1")) {
+            System.out.println("\nChoose difficulty level:");
+            System.out.println("1. Easy");
+            System.out.println("2. Normal");
+            System.out.println("3. Hard");
+            System.out.print("\nLevel: ");
+    
+            int difficultyLevel = Integer.parseInt(keyboard.nextLine());
+            int wordLength;
+
+            if (difficultyLevel == 1) {
+                wordLength = 3 + (int)(Math.random() * 2);
+            }
+            else if (difficultyLevel == 2) {
+                wordLength = 5;
+            }
+            else {
+                wordLength = 6 + (int)(Math.random());
+            }
+
             Scanner scanner = new Scanner(new File("words.txt"));
     
             List<String> words = new ArrayList<>();
     
             while (scanner.hasNext()) {
-                words.add(scanner.nextLine());
+                String nextWord = scanner.nextLine();
+                if (nextWord.length() == wordLength) {
+                    words.add(nextWord);
+                }
             }
     
             Random rand = new Random();
@@ -65,7 +87,7 @@ public class HangmanGame {
                 break;
             }
             else {
-                System.out.println("Uppss.. Try again!");
+                System.out.println("\nUpss... Try again!");
             }
         }
     }
