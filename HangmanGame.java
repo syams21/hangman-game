@@ -11,7 +11,7 @@ import javax.swing.undo.StateEdit;
 
 public class HangmanGame {
     public static void main(String[] args) throws FileNotFoundException{
-        Scanner scanner = new Scanner(new File("E:/Document/0MevMe/java/project/hangmanGame/words.txt"));
+        Scanner scanner = new Scanner(new File("words.txt"));
         Scanner keyboard = new Scanner(System.in);
 
         List<String> words = new ArrayList<>();
