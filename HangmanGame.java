@@ -18,6 +18,7 @@ public class HangmanGame {
             System.out.println("1. Easy");
             System.out.println("2. Normal");
             System.out.println("3. Hard");
+            System.out.println("4. Expert");
             System.out.print("\nLevel: ");
     
             int difficultyLevel = Integer.parseInt(keyboard.nextLine());
@@ -27,10 +28,13 @@ public class HangmanGame {
                 wordLength = 3 + (int)(Math.random() * 2);
             }
             else if (difficultyLevel == 2) {
-                wordLength = 5;
+                wordLength = 5 + (int)(Math.random() * 2);
+            }
+            else if (difficultyLevel == 3) {
+                wordLength = 7 + (int)(Math.random() * 2);
             }
             else {
-                wordLength = 6 + (int)(Math.random());
+                wordLength = 9 + (int)(Math.random() * 6);
             }
 
             Scanner scanner = new Scanner(new File("words.txt"));
